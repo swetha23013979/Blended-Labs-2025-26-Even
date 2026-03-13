@@ -2,9 +2,9 @@
 
 ## Author
 
-* **Name**: ________________________________
-* **Register Number**: _____________________
-* **Date of Submission**: __________________
+* **Name**: Swetha D
+* **Register Number**: 212223040222
+* **Date of Submission**: 13/03/2026
 
 ---
 
@@ -82,13 +82,24 @@ Test the database server by connecting to it locally or remotely and performing 
 
 ## Workflow (Student Explanation)
 
-(Write the steps you followed in your own words)
+1. I logged in to the AWS Management Console and launched a new EC2 instance using the Amazon Linux 2 AMI. I selected a suitable instance type (such as t2.micro), created or selected an existing key pair, and configured a security group during the setup process.
 
-1. ---
-2. ---
-3. ---
-4. ---
-5. ---
+2. I modified the security group settings to allow inbound traffic for SSH (Port 22) from my IP address and enabled the required database port (for example, MySQL – 3306) so that the database server could be accessed when needed.
+
+3. After the instance was launched, I connected to it from my local machine using SSH with the key pair file:
+   `ssh -i mykey.pem ec2-user@<public-ip-address>`
+
+4. Once connected to the instance, I updated the system packages and installed the database server (for example, MySQL) using the package manager:
+   `sudo yum update -y`  
+   `sudo yum install mysql-server -y`
+
+5. I started the database service and enabled it to start automatically on boot. Then, I secured the installation by setting a root password and configuring basic security settings:
+   `sudo systemctl start mysqld`  
+   `sudo mysql_secure_installation`
+
+6. After configuring the database server, I logged in to MySQL and created a sample database and table. I inserted a few records into the table using SQL commands such as CREATE DATABASE, CREATE TABLE, and INSERT.
+
+7. Finally, I tested the database connectivity by logging into the database locally and running SELECT queries to verify that the inserted data was stored and retrieved successfully.
 
 ---
 
@@ -96,19 +107,22 @@ Test the database server by connecting to it locally or remotely and performing 
 
 ### Screenshot 1: EC2 Instance for Database Server
 
-(Insert Screenshot Here)
+<img width="1920" height="967" alt="image" src="https://github.com/user-attachments/assets/52feb724-2997-452e-9cd7-cfcf9ae1ca97" />
+
 
 ---
 
 ### Screenshot 2: Database Service Running
 
-(Insert Screenshot Here)
+<img width="1920" height="967" alt="image" src="https://github.com/user-attachments/assets/09886eba-953a-4f31-905f-0fa78f42a8a3" />
+
 
 ---
 
 ### Screenshot 3: Sample Database and Table
 
-(Insert Screenshot Here)
+<img width="1920" height="967" alt="image" src="https://github.com/user-attachments/assets/c4de12ea-a2d7-4464-956e-157936a45441" />
+
 
 ---
 
